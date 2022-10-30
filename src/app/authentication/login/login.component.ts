@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthServiceService } from '../auth-service.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   formGroup!: FormGroup;
 
-  constructor(private authService:AuthServiceService) { }
+  constructor(private authService:AuthServiceService, private route:Router) { }
 
   ngOnInit(): void {
     this.initForm();
@@ -28,8 +29,9 @@ export class LoginComponent implements OnInit {
     if(this.formGroup.valid){
       this.authService.login(this.formGroup.value).subscribe(result=>{
         if(result.status){
-          console.log(result);
-          alert(result.message);
+          console.log(result.data);
+          localStorage.setItem('accessToken',JSON.stringify(result.data.accessToken));
+          this.route.navigate(['/']);
         }
       })
     }
