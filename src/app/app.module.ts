@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { HeaderComponent } from './layout/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    DashboardComponent,
     
   ],
   imports: [

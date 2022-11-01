@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
         if(result.status){
           console.log(result.data);
           localStorage.setItem('accessToken',JSON.stringify(result.data.accessToken));
-          this.route.navigate(['/']);
+          this.route.navigate(['/dashboard']);
         }
       })
     }
