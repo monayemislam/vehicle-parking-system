@@ -6,7 +6,7 @@
 .left-sidebar-wrapper{
     background-color: #293846 !important;
     width: 250px;
-    /* height: 100vh; */
+    height: 100vh;
 }
 .sidebar-item a{
     color: #c5c5c5;

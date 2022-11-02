@@ -12,6 +12,8 @@
   </head>
   <body>
     <app-header></app-header>
+    <app-login></app-login>
+    <app-dashboard *ngIf="dashboardToggle()"></app-dashboard>
     <router-outlet></router-outlet>
     
 
