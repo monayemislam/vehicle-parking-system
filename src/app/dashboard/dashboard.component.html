@@ -40,11 +40,12 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-white d-flex align-items-center" href="#" id="userDropDown"
               role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fa-solid fa-user-circle pe-2"></i>Monayem Islam
+              <i class="fa-solid fa-user-circle pe-2"></i>{{userName.name}}
             </a>
             <ul class="dropdown-menu dropdown-menu-white user-dropdown" aria-labelledby="userDropDown">
               <li><a class="dropdown-item" href="#">Profile</a></li>
-              <li><a class="dropdown-item" href="#">Sign Out</a></li>
+              <li><button class="dropdown-item" (click)="signOutUser()">Sign Out</button></li>
+              
             </ul>
           </li>
         </ul>
@@ -58,7 +59,7 @@
             <div class="card-body">
               <h5 class="card-title lead">New Requests</h5>
               <div class="d-flex justify-content-between align-items-center">
-                <div><i class="fa-solid fa-cart-plus fa-4x text-info"></i></div>
+                <div><i class="fa-solid fa-car fa-4x text-info"></i></div>
                 <div>
                   <h1>2390</h1>
                   <a href="#" class="text-decoration-none see-details-btn">See Details</a>
@@ -72,7 +73,7 @@
             <div class="card-body">
               <h5 class="card-title lead">Completed Request</h5>
               <div class="d-flex justify-content-between align-items-center">
-                <div><i class="fa-solid fa-boxes-stacked fa-4x text-success"></i></div>
+                <div><i class="fa-solid fa-check-to-slot fa-4x text-success"></i></div>
                 <div>
                   <h1>5603</h1>
                   <a href="#" class="text-decoration-none see-details-btn">See Details</a>
@@ -86,7 +87,7 @@
             <div class="card-body">
               <h5 class="card-title lead">Cancelled Requests</h5>
               <div class="d-flex justify-content-between align-items-center">
-                <div><i class="fa-solid fa-truck-ramp-box fa-4x text-primary"></i></div>
+                <div><i class="fa-regular fa-rectangle-xmark fa-4x text-primary"></i></div>
                 <div>
                   <h1>4594</h1>
                   <a href="#" class="text-decoration-none see-details-btn">See Details</a>
@@ -100,7 +101,7 @@
             <div class="card-body">
               <h5 class="card-title lead">Total Spaces</h5>
               <div class="d-flex justify-content-between align-items-center">
-                <div><i class="fa-solid fa-users fa-4x text-warning"></i></div>
+                <div><i class="fa-solid fa-warehouse fa-4x text-warning"></i></div>
                 <div>
                   <h1>890</h1>
                   <a href="#" class="text-decoration-none see-details-btn">See Details</a>
@@ -114,7 +115,7 @@
       <!--Table & Line Chart Start-->
 
       <div class="row d-flex justify-content-between py-3 px-3 gap-4">
-        <div class="col user-table">
+        <div class="col-7 user-table">
 
           <table class="table table-sm caption-top text-center">
             <caption class="lead user-table-caption ps-2">Recent Transactions</caption>
@@ -123,7 +124,7 @@
                 <th scope="col">SL</th>
                 <th scope="col">Trxn ID</th>
                 <th scope="col">Customer Name</th>
-                <th scope="col">Amount</th>
+                <th scope="col">Email</th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
@@ -132,7 +133,7 @@
                 <td>1</td>
                 <td>Trxn-23</td>
                 <td>Tamal</td>
-                <td>34098</td>
+                <td>monayemislam@gmail.com</td>
                 <td><a href="#" class="text-decoration-none link-light"><i class="fa-regular fa-eye pe-2"></i></a>
                 </td>
               </tr>
@@ -140,7 +141,7 @@
                 <td>1</td>
                 <td>Trxn-23</td>
                 <td>Tamal</td>
-                <td>34098</td>
+                <td>monayemislam@gmail.com</td>
                 <td><a href="#" class="text-decoration-none link-light"><i class="fa-regular fa-eye pe-2"></i></a>
                 </td>
               </tr>
@@ -148,7 +149,7 @@
                 <td>1</td>
                 <td>Trxn-23</td>
                 <td>Tamal</td>
-                <td>34098</td>
+                <td>monayemislam@gmail.com</td>
                 <td><a href="#" class="text-decoration-none link-light"><i class="fa-regular fa-eye pe-2"></i></a>
                 </td>
               </tr>
@@ -156,7 +157,7 @@
                 <td>1</td>
                 <td>Trxn-23</td>
                 <td>Tamal</td>
-                <td>34098</td>
+                <td>monayemislam@gmail.com</td>
                 <td><a href="#" class="text-decoration-none link-light"><i class="fa-regular fa-eye pe-2"></i></a>
                 </td>
               </tr>
@@ -164,7 +165,7 @@
                 <td>1</td>
                 <td>Trxn-23</td>
                 <td>Tamal</td>
-                <td>34098</td>
+                <td>monayemislam@gmail.com</td>
                 <td><a href="#" class="text-decoration-none link-light"><i class="fa-regular fa-eye pe-2"></i></a>
                 </td>
               </tr>
@@ -172,7 +173,7 @@
                 <td>1</td>
                 <td>Trxn-23</td>
                 <td>Tamal</td>
-                <td>34098</td>
+                <td>monayemislam@gmail.com</td>
                 <td><a href="#" class="text-decoration-none link-light"><i class="fa-regular fa-eye pe-2"></i></a>
                 </td>
               </tr>
@@ -180,7 +181,7 @@
                 <td>1</td>
                 <td>Trxn-23</td>
                 <td>Tamal</td>
-                <td>34098</td>
+                <td>monayemislam@gmail.com</td>
                 <td><a href="#" class="text-decoration-none link-light"><i class="fa-regular fa-eye pe-2"></i></a>
                 </td>
               </tr>
@@ -188,7 +189,31 @@
                 <td>1</td>
                 <td>Trxn-23</td>
                 <td>Tamal</td>
-                <td>34098</td>
+                <td>monayemislam@gmail.com</td>
+                <td><a href="#" class="text-decoration-none link-light"><i class="fa-regular fa-eye pe-2"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Trxn-23</td>
+                <td>Tamal</td>
+                <td>monayemislam@gmail.com</td>
+                <td><a href="#" class="text-decoration-none link-light"><i class="fa-regular fa-eye pe-2"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Trxn-23</td>
+                <td>Tamal</td>
+                <td>monayemislam@gmail.com</td>
+                <td><a href="#" class="text-decoration-none link-light"><i class="fa-regular fa-eye pe-2"></i></a>
+                </td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Trxn-23</td>
+                <td>Tamal</td>
+                <td>monayemislam@gmail.com</td>
                 <td><a href="#" class="text-decoration-none link-light"><i class="fa-regular fa-eye pe-2"></i></a>
                 </td>
               </tr>
@@ -199,10 +224,14 @@
         </div>
         <div class="col transaction-chart">
           <div class="p-2">
-            <h3 class="lead user-table-caption pt-1">Transaction of Last Six months</h3>
+            <h3 class="lead user-table-caption pt-1">{{userName.name}}'s Current Geo-location</h3>
             <canvas id="transactionChart" class="transaction-canvas"></canvas>
           </div>
         </div>
+
+        
+
+
       </div>
 
       <!--Table & Line Chart End-->

@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'vehicle-parking-system';
   
-  dashboardToggle(){
+ isLoggedIn(){
     let role = JSON.parse(localStorage.getItem('role')!);
     if(!role){
       return false;

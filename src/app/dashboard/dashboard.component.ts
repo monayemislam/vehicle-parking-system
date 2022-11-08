@@ -6,27 +6,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  userName:any = [];
 
-
-  constructor() { }
+  constructor() { 
+    this.userName = JSON.parse(localStorage.getItem('user')!);
+  }
 
   ngOnInit(): void {
   }
 
-  displayDashboard:any = [];
+
   
-  dashboardToggle(){
-    let role = JSON.parse(localStorage.getItem('role')!);
-    if(!role){
-      this.displayDashboard = false;
-      alert('kjkgj');
-      console.log('not');
-    }
-    else{
-      this.displayDashboard = true;
-      alert('kjkgj');
-      console.log('yes');
-    }
+  
+  signOutUser(){
+    localStorage.clear();
+    console.log("sign out");
+  }
+
+  getUser()
+  {
+    
   }
 
 }

@@ -11,10 +11,11 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <app-header></app-header>
-    <app-login></app-login>
-    <app-dashboard *ngIf="dashboardToggle()"></app-dashboard>
-    <router-outlet></router-outlet>
+    <app-header *ngIf="!isLoggedIn()"></app-header>
+    <app-login *ngIf="!isLoggedIn()"></app-login>
+    
+    <app-dashboard *ngIf="isLoggedIn()"></app-dashboard>
+    <!-- <router-outlet></router-outlet> -->
     
 
     <!-- Optional JavaScript; choose one of the two! -->
