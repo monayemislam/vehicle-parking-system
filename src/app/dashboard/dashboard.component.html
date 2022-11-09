@@ -223,9 +223,15 @@
           </table>
         </div>
         <div class="col transaction-chart">
-          <div class="p-2">
+          <div class="p-3">
             <h3 class="lead user-table-caption pt-1">{{userName.name}}'s Current Geo-location</h3>
-            <canvas id="transactionChart" class="transaction-canvas"></canvas>
+            <div class="d-flex justify-content-between geo-location-overview p-1 rounded mb-3">
+              <small class="">Latitude: <span>{{userLocation.coords.latitude}}</span></small>
+              <small>Longitude: <span>{{userLocation.coords.longitude}}</span></small>
+            </div>
+            <app-user-location [locationData]="latLng"></app-user-location>
+            <!-- <canvas id="transactionChart" class="transaction-canvas"></canvas> -->
+            
           </div>
         </div>
 

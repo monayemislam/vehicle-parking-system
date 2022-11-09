@@ -8,6 +8,8 @@ import { AuthenticationModule } from './authentication/authentication.module';
 import { HeaderComponent } from './layout/header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { UserLocationComponent } from './common/user-location/user-location.component';
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
@@ -15,6 +17,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     AppComponent,
     HeaderComponent,
     DashboardComponent,
+    UserLocationComponent,
     
   ],
   imports: [
@@ -23,7 +26,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AuthenticationModule
+    AuthenticationModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCLL6lfcv6Poo0zf507ljah35gRvMBe23s'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

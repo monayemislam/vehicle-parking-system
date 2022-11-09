@@ -7,15 +7,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
   userName:any = [];
+  userLocation:any;
+  lat:any;
+  lng:any;
+  latLng:any;
+  
+  
+
 
   constructor() { 
     this.userName = JSON.parse(localStorage.getItem('user')!);
   }
 
-  ngOnInit(): void {
+  ngOnInit()
+  {
+    navigator.geolocation.getCurrentPosition((response)=>{
+      this.userLocation = response;
+      this.lat = response.coords.latitude;
+      this.lng = response.coords.longitude;
+      this.latLng = {
+        userLat : this.lat,
+        userLng : this.lng
+    
+      }
+    });
   }
-
-
   
   
   signOutUser(){

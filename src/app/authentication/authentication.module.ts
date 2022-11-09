@@ -16,6 +16,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  exports: [LoginComponent],
+  exports: [LoginComponent,RegisterComponent],
 })
 export class AuthenticationModule { }
