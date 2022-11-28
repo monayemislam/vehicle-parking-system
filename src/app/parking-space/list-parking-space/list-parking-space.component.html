@@ -1,0 +1,38 @@
+
+<button class="btn btn-outline-light mt-5">Create Parking Space</button>
+<div class="row d-flex justify-content-between py-3 px-3 gap-4">
+    <div class="col-12 user-table">
+
+        <table class="table table-sm caption-top text-center">
+            <caption class="lead user-table-caption ps-2">Recent Transactions</caption>
+            <thead>
+                <tr>
+                    <th scope="col">SL</th>
+                    <th scope="col">Space Name</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Comments</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of parkingSpaceList;index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{item.space_name}}</td>
+                    <td>{{item.space_type.name}}</td>
+                    <td>{{item.comments}}</td>
+                    <td *ngIf="item.status=='1'; then thenBlock else elseBlock"></td>
+                    <ng-template #thenBlock>Actived</ng-template>
+                    <ng-template #elseBlock><span class="text-danger">Deactivated</span></ng-template>
+                    <td><a href="#" class="text-decoration-none link-light"><i class="fa-regular fa-eye pe-2"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+</div>

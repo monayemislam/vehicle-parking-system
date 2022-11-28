@@ -10,6 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserLocationComponent } from './common/user-location/user-location.component';
 import { AgmCoreModule } from '@agm/core';
+import { ListParkingSpaceComponent } from './parking-space/list-parking-space/list-parking-space.component';
+import { CompletedRequestsComponent } from './requests/completed-requests/completed-requests.component';
 
 
 @NgModule({
@@ -18,6 +20,9 @@ import { AgmCoreModule } from '@agm/core';
     HeaderComponent,
     DashboardComponent,
     UserLocationComponent,
+    ListParkingSpaceComponent,
+    DashboardComponent,
+    CompletedRequestsComponent
     
   ],
   imports: [
