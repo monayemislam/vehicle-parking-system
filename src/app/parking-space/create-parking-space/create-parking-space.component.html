@@ -1,0 +1,37 @@
+<a href="parking-space/list-parking-space" class="btn btn-outline-light mt-5">View Parking Spaces</a>
+<div class="row d-flex justify-content-between py-3 px-3 gap-4">
+    <div class="col-12 form-wrapper">
+        <form [formGroup]="formGroup" (ngSubmit)="createSpaceSubmit()">
+        <div class="row g-3">
+            <div class="col">
+                <label class="form-label text-white">Space Name</label>
+              <input type="text" class="form-control" placeholder="Ex: Home" formControlName="spaceName">
+            </div>
+            <div class="col">
+                <label class="form-label text-white">Space Type</label>
+                <select  class="form-select" formControlName="spaceType">
+                    <option>Choose</option>
+                    <option *ngFor="let item of spaceTypeList" value="{{item['id']}}">
+                      {{item['name']}}
+                    </option>
+                  </select>
+              </div>
+          </div>
+          <div class="row g-3 pt-2">
+            <div class="col">
+                <label class="form-label text-white">Status</label>
+                <select id="inputState" class="form-select" formControlName="status">
+                    <option selected>Choose...</option>
+                    <option value="true">Active</option>
+                    <option value="false">Deactive</option>
+                  </select>
+            </div>
+            <div class="col">
+                    <label class="form-label text-white">Comments</label>
+                    <input type="text" class="form-control" formControlName="comments">
+              </div>
+          </div>
+          <button type="submit" class="btn btn-outline-light mt-4">Create Space</button>
+        </form>
+    </div>
+</div>

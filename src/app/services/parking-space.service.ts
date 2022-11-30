@@ -14,7 +14,8 @@ export class ParkingSpaceService {
   // });
 
   header = new HttpHeaders({
-    'Authorization':`Bearer ${JSON.parse(localStorage.getItem('accessToken')!)}`
+    'Authorization':`Bearer ${JSON.parse(localStorage.getItem('accessToken')!)}`,
+    'Accept': `application/json`
   });
 
 
@@ -22,22 +23,19 @@ export class ParkingSpaceService {
 
    }
 
-  // public getUserSpecificAvailableSpace(data:any):Observable<any>
-  //  {
-  //     return this.http.get('http://127.0.0.1:8000/api/get-available-space',{
-  //       headers: this.header
-  //     });
-  //  }
-
    public getUserSpecificAvailableSpace(data:any):Observable<any>
    {
       return this.http.get('http://127.0.0.1:8000/api/get-available-space',{
-        headers: this.header
+        headers: this.header,
       });
    }
 
-  //  public tokenCheck(){
-  //   console.log("Token Check")
-  //   console.log(this.header);
-  //  }
+  public createUserSpecificAvailableSpace(data:any):Observable<any>
+  {
+     return this.http.post('http://127.0.0.1:8000/api/create-available-space',data,{
+       headers: this.header
+     });
+  }
+
+
 }

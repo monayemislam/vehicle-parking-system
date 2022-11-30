@@ -26,8 +26,8 @@ export class ListParkingSpaceComponent implements OnInit {
   getParkingList(){
     this.parkingSpace.getUserSpecificAvailableSpace({}).subscribe((res:any) => {
       this.parkingSpaceList = res.data;
-        console.log("Hello");
-        console.log('parking space',this.parkingSpaceList);
+      //   console.log("Hello");
+      //   console.log('parking space',this.parkingSpaceList);
     }),
     (error:any) => {
       console.log('res', error);

@@ -13,6 +13,7 @@ import { AgmCoreModule } from '@agm/core';
 import { ListParkingSpaceComponent } from './parking-space/list-parking-space/list-parking-space.component';
 import { CompletedRequestsComponent } from './requests/completed-requests/completed-requests.component';
 import { OverviewComponent } from './overview/overview.component';
+import { CreateParkingSpaceComponent } from './parking-space/create-parking-space/create-parking-space.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { OverviewComponent } from './overview/overview.component';
     UserLocationComponent,
     ListParkingSpaceComponent,
     CompletedRequestsComponent,
-    OverviewComponent
+    OverviewComponent,
+    CreateParkingSpaceComponent
     
   ],
   imports: [
