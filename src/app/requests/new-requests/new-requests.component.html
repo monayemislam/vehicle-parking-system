@@ -1,12 +1,12 @@
 
 <div class="row d-flex justify-content-between mt-5 py-3 px-3 gap-4">
     <div class="col-12 form-wrapper user-table">
-        <form class="p-3">
+        <form class="p-3" [formGroup]="formGroup" (ngSubmit)="createNewRequestSubmit()">
 
           <div class="row g-3 pt-2">
             <div class="col">
                 <label class="form-label text-white">Nearest Parking Space</label>
-                <select  class="form-select">
+                <select  class="form-select" formControlName="available_space_id">
                   <option>Choose</option>
                   <option *ngFor="let item of nearestSpacesList" value="{{item['id']}}">
                     {{item['space_name']}}
@@ -15,7 +15,7 @@
             </div>
             <div class="col">
               <label class="form-label text-white">Payment Method</label>
-              <select  class="form-select">
+              <select  class="form-select" formControlName="payment_method_id">
                   <option>Choose</option>
                   <option *ngFor="let item of paymentMethodTypeList" value="{{item['id']}}">
                     {{item['name']}}
@@ -27,22 +27,22 @@
           <div class="row g-3 pt-2">
             <div class="col">
                 <label class="form-label text-white">Start Date</label>
-                <input type="date" class="form-control">
+                <input type="date" class="form-control" formControlName="start_date">
             </div>
             <div class="col">
                 <label class="form-label text-white">Start Time</label>
-                <input type="time" class="form-control">
+                <input type="time" class="form-control" formControlName="start_time">
             </div>
           </div>
 
           <div class="row g-3 pt-2">
             <div class="col">
                 <label class="form-label text-white">End Date</label>
-                <input type="date" class="form-control">
+                <input type="date" class="form-control" formControlName="end_date">
             </div>
             <div class="col">
-                <label class="form-label text-white">Start Time</label>
-                <input type="time" class="form-control">
+                <label class="form-label text-white">End Time</label>
+                <input type="time" class="form-control" formControlName="end_time">
             </div>
           </div>
 
