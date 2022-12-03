@@ -48,8 +48,10 @@ export class CreateParkingSpaceComponent implements OnInit {
       'space_name' : this.formGroup.value.spaceName,
       'space_type_id' : JSON.parse(this.formGroup.value.spaceType),
       'user_id' :  this.user.id,
-      'latitude' : JSON.stringify(localStorage.getItem('lat')!),
-      'longitude' : JSON.stringify(localStorage.getItem('lat')!),
+      'latitude' : localStorage.getItem('lat')!,
+      'longitude' : localStorage.getItem('lng')!,
+      // 'latitude' : JSON.stringify(localStorage.getItem('lat')!),
+      // 'longitude' : JSON.stringify(localStorage.getItem('lng')!),
       'status' : JSON.parse(this.formGroup.value.status),
       'comments' : this.formGroup.value.comments
   };

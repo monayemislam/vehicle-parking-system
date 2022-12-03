@@ -1,0 +1,52 @@
+
+<div class="row d-flex justify-content-between mt-5 py-3 px-3 gap-4">
+    <div class="col-12 form-wrapper user-table">
+        <form class="p-3">
+
+          <div class="row g-3 pt-2">
+            <div class="col">
+                <label class="form-label text-white">Nearest Parking Space</label>
+                <select  class="form-select">
+                  <option>Choose</option>
+                  <option *ngFor="let item of nearestSpacesList" value="{{item['id']}}">
+                    {{item['space_name']}}
+                  </option>
+                </select>
+            </div>
+            <div class="col">
+              <label class="form-label text-white">Payment Method</label>
+              <select  class="form-select">
+                  <option>Choose</option>
+                  <option *ngFor="let item of paymentMethodTypeList" value="{{item['id']}}">
+                    {{item['name']}}
+                  </option>
+                </select>
+            </div>
+          </div>
+
+          <div class="row g-3 pt-2">
+            <div class="col">
+                <label class="form-label text-white">Start Date</label>
+                <input type="date" class="form-control">
+            </div>
+            <div class="col">
+                <label class="form-label text-white">Start Time</label>
+                <input type="time" class="form-control">
+            </div>
+          </div>
+
+          <div class="row g-3 pt-2">
+            <div class="col">
+                <label class="form-label text-white">End Date</label>
+                <input type="date" class="form-control">
+            </div>
+            <div class="col">
+                <label class="form-label text-white">Start Time</label>
+                <input type="time" class="form-control">
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-outline-light mt-4">Send</button>
+        </form>
+    </div>
+</div>

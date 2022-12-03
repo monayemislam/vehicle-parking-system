@@ -14,6 +14,7 @@ import { ListParkingSpaceComponent } from './parking-space/list-parking-space/li
 import { CompletedRequestsComponent } from './requests/completed-requests/completed-requests.component';
 import { OverviewComponent } from './overview/overview.component';
 import { CreateParkingSpaceComponent } from './parking-space/create-parking-space/create-parking-space.component';
+import { NewRequestsComponent } from './requests/new-requests/new-requests.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { CreateParkingSpaceComponent } from './parking-space/create-parking-spac
     ListParkingSpaceComponent,
     CompletedRequestsComponent,
     OverviewComponent,
-    CreateParkingSpaceComponent
+    CreateParkingSpaceComponent,
+    NewRequestsComponent
     
   ],
   imports: [

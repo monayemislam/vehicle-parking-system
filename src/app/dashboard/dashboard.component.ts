@@ -30,8 +30,10 @@ export class DashboardComponent implements OnInit {
         userLng : this.lng
     
       }
-      localStorage.setItem('lat',JSON.stringify(this.lat));
-      localStorage.setItem('lng',JSON.stringify(this.lng));
+      localStorage.setItem('lat',this.lat);
+      localStorage.setItem('lng',this.lng);
+      // localStorage.setItem('lat',JSON.stringify(this.lat));
+      // localStorage.setItem('lng',JSON.stringify(this.lng));
     });
   }
   
