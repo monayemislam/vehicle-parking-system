@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { NearestParkingSpacesService } from 'src/app/services/nearest-parking-spaces.service';
+import { ParkingRequestsService } from 'src/app/services/parking-requests.service';
 import { PaymentMethodService } from 'src/app/services/payment-method.service';
 
 @Component({
@@ -14,10 +16,11 @@ export class NewRequestsComponent implements OnInit {
   nearestSpacesList = [];
   formGroup!: FormGroup;
   newParkingRequestData:any = [];
+  newParkingRequestCreate = [];
   user:any = JSON.parse(localStorage.getItem('user')!);
 
 
-  constructor(private paymentMethod:PaymentMethodService, private nearestSpaces:NearestParkingSpacesService, private fb:FormBuilder) { }
+  constructor(private newParkingRequestsInstancce:ParkingRequestsService, private paymentMethod:PaymentMethodService, private nearestSpaces:NearestParkingSpacesService, private router:Router, private fb:FormBuilder) { }
 
   ngOnInit(): void {
     this.paymentMethodType();
@@ -73,7 +76,17 @@ createNewRequestSubmit(){
       'end_time' : this.formGroup.value.end_time
   };
 
-  console.log(this.newParkingRequestData);
+  console.log('Before submit check data',this.newParkingRequestData);
+
+  this.newParkingRequestsInstancce.createNewParkingRequest(this.newParkingRequestData).subscribe((res:any) => {
+    this.newParkingRequestCreate = res.data;
+      console.log('Parking Space Created',this.newParkingRequestCreate);
+      this.router.navigate(['parking-space/create-parking-space']);
+  }),
+  (error:any) => {
+    console.log('res', error);
+  };
+
 
 }
 
